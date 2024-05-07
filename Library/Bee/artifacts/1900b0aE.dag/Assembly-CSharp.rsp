@@ -354,6 +354,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.21f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/8K Skybox Pack Free/Example Scenes/Script/RotateCamera.cs"
 "Assets/Scripts/BackToMainScene.cs"
+"Assets/Scripts/MoveCamera.cs"
 "Assets/Scripts/MoveRocket.cs"
 "Assets/Scripts/PSBoundariesPerspective.cs"
 "Assets/Scripts/RocketCollision.cs"
