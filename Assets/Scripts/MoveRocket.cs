@@ -16,11 +16,11 @@ public class MoveRocket : MonoBehaviour
     {  
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))  
         {
-            transform.Translate(Vector3.left * 0.1f, Space.Self);    
+            transform.Translate(Vector3.down * 0.1f, Space.Self);    
         }  
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))  
         {  
-            transform.Translate(Vector3.right * 0.1f, Space.Self);  
+            transform.Translate(Vector3.up * 0.1f, Space.Self);  
         }  
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))  
         {  
