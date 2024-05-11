@@ -4,31 +4,31 @@ using UnityEngine;
   
 public class MoveRocket : MonoBehaviour  
 {  
-     
-    // Start is called before the first frame update  
-    void Start()  
-    {  
-          
-    }  
-  
-    // Update is called once per frame  
     void Update()  
     {  
-        if (Input.GetKey(KeyCode.A))  
-        {
-            transform.Translate(0.0f, -0.1f, 0f);    
+        if (Input.GetKey(KeyCode.DownArrow))  
+        {  
+            transform.Translate(Vector3.left*0.1f);  
         }  
+        if (Input.GetKey(KeyCode.UpArrow))  
+        {  
+            transform.Translate(Vector3.right*0.1f);    
+        }
+        if (Input.GetKey(KeyCode.A))  
+        {  
+            transform.Rotate(0.0f,-0.5f,0.0f);    
+        }
         if (Input.GetKey(KeyCode.D))  
         {  
-            transform.Translate(0.0f, 0.1f, 0f);  
-        }  
-        if (Input.GetKey(KeyCode.S))  
-        {  
-            transform.Translate(0.1f, 0f, 0f);  
-        }  
+            transform.Rotate(0.0f,0.5f,0.0f);    
+        }
         if (Input.GetKey(KeyCode.W))  
         {  
-            transform.Translate(-0.1f, 0f, 0f);    
-        }  
+            transform.Rotate(0f,0.0f,0.5f);    
+        }
+        if (Input.GetKey(KeyCode.S))  
+        {  
+            transform.Rotate(0.0f,0.0f,-0.5f);    
+        } 
     }  
 }  
