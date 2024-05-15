@@ -15,6 +15,11 @@ public class MoveRocket : MonoBehaviour
     {
         if (GameManager.Instance.mode == 0)
         {
+            Vector3 viewPos = transform.position;
+            viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
+            viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
+            viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
+            transform.position = viewPos;
             HandleClassicControls();
         }
         else
