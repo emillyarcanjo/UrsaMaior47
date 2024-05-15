@@ -913,9 +913,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-        m_MethodName: OnLook
+      - m_Target: {fileID: 968769608}
+        m_TargetAssemblyTypeName: MoveRocket, Assembly-CSharp
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -929,9 +929,9 @@ MonoBehaviour:
     m_ActionName: Rocket/Movement[/XInputControllerWindows/leftStick,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
-        m_MethodName: OnMove
+      - m_Target: {fileID: 968769608}
+        m_TargetAssemblyTypeName: MoveRocket, Assembly-CSharp
+        m_MethodName: OnLook
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

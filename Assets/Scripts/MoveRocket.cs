@@ -65,7 +65,7 @@ public class MoveRocket : MonoBehaviour
     {
         Vector3 movement = new Vector3(moveVector.y, 0, -moveVector.x);
         movement.Normalize();
-        transform.Translate(moveSpeed * movement * Time.deltaTime, Space.World);
+        transform.Translate(moveSpeed * movement * Time.deltaTime, Space.Self);
 
         float horizontalRotation = lookVector.x * rotationSpeed * Time.deltaTime;
         float verticalRotation = lookVector.y * rotationSpeed * Time.deltaTime;
