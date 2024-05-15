@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class BackToMainScene : MonoBehaviour
 {
     private Button button;
+    public int mode;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class BackToMainScene : MonoBehaviour
 
     public void LoadMainScene()
     {
-        SceneManager.LoadScene(0);
+        GameManager.Instance.mode = mode;
+        SceneManager.LoadScene(1);
     }
 }
