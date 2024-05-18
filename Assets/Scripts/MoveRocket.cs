@@ -30,5 +30,12 @@ public class MoveRocket : MonoBehaviour
         {  
             transform.Rotate(0.0f,0.0f,-0.5f);    
         } 
+    }
+    void LateUpdate(){
+        Vector3 viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
+        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
+        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
+        transform.position = viewPos;
     }  
 }  
