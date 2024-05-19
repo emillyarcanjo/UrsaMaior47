@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 472520352}
   - component: {fileID: 472520351}
   - component: {fileID: 472520350}
+  - component: {fileID: 472520354}
   m_Layer: 0
   m_Name: Emilly Planet
   m_TagString: Emilly Planet
@@ -329,6 +330,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &472520354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 472520349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f547aad2bf401734f8840c011391e11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitCenter: {fileID: 1590876056}
+  a: 20
+  b: 12
+  TranslationPace: 0.005
+  RotationPace: 0.2
 --- !u!1 &648846379
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &648846380
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -429,7 +447,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -540,6 +558,7 @@ GameObject:
   - component: {fileID: 816597771}
   - component: {fileID: 816597770}
   - component: {fileID: 816597769}
+  - component: {fileID: 816597773}
   m_Layer: 0
   m_Name: Iza Planet
   m_TagString: Iza Planet
@@ -633,6 +652,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &816597773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816597768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f547aad2bf401734f8840c011391e11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitCenter: {fileID: 1590876056}
+  a: 20
+  b: 12
+  TranslationPace: 0.005
+  RotationPace: 0.2
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +729,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 110
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -720,7 +756,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -4, y: 2.8, z: 0}
+  m_LocalPosition: {x: -102, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -740,6 +776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   rotationSpeed: 100
+  Rocket: {fileID: 968769606}
+  smoothTime: 0.2
 --- !u!1 &968769606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6236790930908222091, guid: b4ebfe3d8ab4def429989cd25349eb90, type: 3}
@@ -821,19 +859,6 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &968769613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968769606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 508182abe34c0af40b6cba3d5eea5949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MainCamera: {fileID: 963194227}
 --- !u!212 &968769614
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1142,9 +1167,6 @@ PrefabInstance:
       addedObject: {fileID: 968769611}
     - targetCorrespondingSourceObject: {fileID: 6236790930908222091, guid: b4ebfe3d8ab4def429989cd25349eb90, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 968769613}
-    - targetCorrespondingSourceObject: {fileID: 6236790930908222091, guid: b4ebfe3d8ab4def429989cd25349eb90, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 968769614}
     - targetCorrespondingSourceObject: {fileID: 6236790930908222091, guid: b4ebfe3d8ab4def429989cd25349eb90, type: 3}
       insertIndex: -1
@@ -1162,6 +1184,7 @@ GameObject:
   - component: {fileID: 1509921263}
   - component: {fileID: 1509921262}
   - component: {fileID: 1509921261}
+  - component: {fileID: 1509921265}
   m_Layer: 0
   m_Name: Lucas Planet
   m_TagString: Lucas Planet
@@ -1255,6 +1278,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509921265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509921260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f547aad2bf401734f8840c011391e11c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitCenter: {fileID: 1590876056}
+  a: 20
+  b: 12
+  TranslationPace: 0.005
+  RotationPace: 0.2
+--- !u!1 &1590876056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1590876057}
+  m_Layer: 0
+  m_Name: OrbitCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1590876057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590876056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: -0.26521108, w: 0.9641904}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.759}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1268,3 +1339,4 @@ SceneRoots:
   - {fileID: 1509921264}
   - {fileID: 5047344}
   - {fileID: 1045787876}
+  - {fileID: 1590876057}
