@@ -15,19 +15,19 @@ public class MoveCamera : MonoBehaviour
   
     void Update()  
     {  
-        if (Input.GetKey(KeyCode.A))  
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))  
         {  
             transform.RotateAround(Rocket.transform.position, Rocket.transform.up, -0.5f);    
         }
-        if (Input.GetKey(KeyCode.D))  
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))  
         {  
             transform.RotateAround(Rocket.transform.position, Rocket.transform.up, 0.5f);   
         }
-        if (Input.GetKey(KeyCode.W))  
+        if (Input.GetKey(KeyCode.UpArrow))  
         {  
             transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, 0.5f);    
         }
-        if (Input.GetKey(KeyCode.S))  
+        if (Input.GetKey(KeyCode.DownArrow))  
         {  
             transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, -0.5f);    
         }
