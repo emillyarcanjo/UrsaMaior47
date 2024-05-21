@@ -755,8 +755,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -102, y: 2.8, z: 0}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -101.3, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -777,7 +777,7 @@ MonoBehaviour:
   moveSpeed: 8
   rotationSpeed: 100
   Rocket: {fileID: 968769606}
-  smoothTime: 0.2
+  smoothTime: 0.1
 --- !u!1 &968769606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6236790930908222091, guid: b4ebfe3d8ab4def429989cd25349eb90, type: 3}

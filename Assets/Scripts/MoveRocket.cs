@@ -11,6 +11,8 @@ public class MoveRocket : MonoBehaviour
     public float moveSpeed = 8f;
     public float rotationSpeed = 100f;
 
+    private Vector3 viewPos;
+
     private void Update()
     {
         if (GameManager.Instance.mode == 0)
@@ -25,27 +27,27 @@ public class MoveRocket : MonoBehaviour
 
     private void HandleClassicControls()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(Vector3.left * 0.1f);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.right * 0.1f);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(0.0f, -0.5f, 0.0f);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(0.0f, 0.5f, 0.0f);
+            transform.Translate(Vector3.left * 0.2f);
         }
         if (Input.GetKey(KeyCode.W))
         {
+            transform.Translate(Vector3.right * 0.2f);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(0.0f, -0.5f, 0.0f);
+        }
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(0.0f, 0.5f, 0.0f);
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
             transform.Rotate(0.0f, 0.0f, 0.5f);
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Rotate(0.0f, 0.0f, -0.5f);
         }
@@ -73,4 +75,12 @@ public class MoveRocket : MonoBehaviour
         transform.Rotate(0, horizontalRotation, 0, Space.World);
         transform.Rotate(0, 0, verticalRotation, Space.World);
     }
+
+    void LateUpdate(){
+        viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
+        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
+        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
+        transform.position = viewPos;
+    } 
 }
