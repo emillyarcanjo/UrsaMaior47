@@ -12,12 +12,12 @@ namespace AstronautThirdPersonCamera
 
     public Transform lookAt;
     public Transform camTransform;
-    public float distance = 5.0f;
+    public float distance = 40.0f;
 
     private float currentX = 0.0f;
     private float currentY = 0.0f;
     private float sensitivityX = 20.0f;
-    private float sensitivityY = 20.0f;
+    private float sensitivityY = 5.0f;
 
     private void Start()
     {
