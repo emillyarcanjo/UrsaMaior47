@@ -46,6 +46,11 @@ namespace AstronautPlayer
                 moveDirection = transform.forward * moveInput * speed;
             }
 
+ 	    if (Input.GetKeyDown(KeyCode.Space))
+            {
+                anim.SetInteger("AnimationPar", 2);
+            }
+
             float turn = Input.GetAxis("Horizontal");
             transform.Rotate(0, turn * turnSpeed * Time.deltaTime, 0);
             controller.Move(moveDirection * Time.deltaTime);

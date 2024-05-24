@@ -27,8 +27,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "fe118fe2-378a-4ce8-aad7-4459f5e788f6",
-                    "path": "<XInputController>/rightStick",
+                    "id": "3127789b-9c3d-4920-85a5-48b147d692dd",
+                    "path": "<XInputController>/leftStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -38,8 +38,56 @@
                 },
                 {
                     "name": "",
-                    "id": "3127789b-9c3d-4920-85a5-48b147d692dd",
+                    "id": "fe118fe2-378a-4ce8-aad7-4459f5e788f6",
+                    "path": "<XInputController>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Astrounaut",
+            "id": "eafbe7df-92c2-4d7f-9562-01f4450576a5",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Button",
+                    "id": "cdb5b240-3d48-400d-848f-79abc2350199",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "e81278b6-a461-4ec0-8b21-245ede6b6f5e",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "34fc0e9d-3d35-4c5c-8291-8df5b4e2f9fb",
                     "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58ae6744-c3bb-4703-b31d-ff281acc3e79",
+                    "path": "<XInputController>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

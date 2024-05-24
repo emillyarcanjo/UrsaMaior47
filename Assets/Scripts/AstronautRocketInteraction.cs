@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class AstronautRocketInteraction : MonoBehaviour
 {
     public Transform astronaut;
-    public float distanceThreshold = 3f;
+    public float distanceThreshold = 4f;
 
     private void Update()
     {
