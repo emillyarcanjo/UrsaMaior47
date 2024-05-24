@@ -13,18 +13,36 @@ public class MoveRocket : MonoBehaviour
 
     private Vector3 viewPos;
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveVector = context.ReadValue<Vector2>();
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        lookVector = context.ReadValue<Vector2>();
+    }
     private void Update()
     {
         if (GameManager.Instance != null && GameManager.Instance.mode == 1)
         {
-	    HandleInputSystemControls();
-            
+            HandleInputSystemControls();
+
         }
         else
         {
             HandleClassicControls();
-            
+
         }
+    }
+
+    void LateUpdate()
+    {
+        viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
+        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
+        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
+        transform.position = viewPos;
     }
 
     private void HandleClassicControls()
@@ -55,16 +73,6 @@ public class MoveRocket : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveVector = context.ReadValue<Vector2>();
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        lookVector = context.ReadValue<Vector2>();
-    }
-
     private void HandleInputSystemControls()
     {
         Vector3 movement = new Vector3(moveVector.y, 0, -moveVector.x);
@@ -78,11 +86,4 @@ public class MoveRocket : MonoBehaviour
         transform.Rotate(0, 0, verticalRotation, Space.World);
     }
 
-    void LateUpdate(){
-        viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
-        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
-        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
-        transform.position = viewPos;
-    } 
 }
