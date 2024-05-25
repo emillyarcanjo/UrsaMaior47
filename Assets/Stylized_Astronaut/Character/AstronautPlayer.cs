@@ -31,7 +31,7 @@ namespace AstronautPlayer
             float moveInputVertical = movimentoInput.y;
             float moveInputHorizontal = movimentoInput.x;
 
-            if (moveInputVertical != 0)
+            if (moveInputVertical != 0 && controller.isGrounded)
             {
                 anim.SetInteger("AnimationPar", 1);
                 moveDirection = transform.forward * moveInputVertical * speed;
@@ -53,9 +53,10 @@ namespace AstronautPlayer
         }
         void Update()
         {
+
             if (isJumping)
             {
-                moveDirection.y = 3;
+                moveDirection.y = 4;
                 isJumping = false;
             }
 
