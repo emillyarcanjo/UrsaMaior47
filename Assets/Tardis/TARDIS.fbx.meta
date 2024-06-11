@@ -3,7 +3,37 @@ guid: 2b6d3a18a8dacbc418f8e719c10c91fc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Decals_Mat
+    second: {fileID: 2100000, guid: a2fb7428faed1104d8cd4c4cf1ad51a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Mat
+    second: {fileID: 2100000, guid: 6da1bee597c716744a514206d92a0596, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass_Opacity_Mat
+    second: {fileID: 2100000, guid: ed283335ad0867543a2183c5ce458d07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold_Mat
+    second: {fileID: 2100000, guid: d28528640d6c9054a929ed128129c1a0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tardis_Metal_Mat
+    second: {fileID: 2100000, guid: 58b0012b4d70a7e4eaccdccf9c8040aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tardis_Wood_Mat
+    second: {fileID: 2100000, guid: fc2fe18cd99185244a79e2b6125475ea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
