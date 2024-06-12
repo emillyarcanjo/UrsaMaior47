@@ -25,7 +25,7 @@ namespace AstronautThirdPersonCamera
 
         private void Update()
         {
-            if (GameManager.Instance != null && GameManager.Instance.mode == 0)
+            if (GameManager.Instance == null || GameManager.Instance.mode == 0)
             {
                 HandleClassicControls();
             }
