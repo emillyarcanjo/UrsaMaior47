@@ -7,24 +7,41 @@ public class MoveRocket : MonoBehaviour
 {
     private Vector2 moveVector;
     private Vector2 lookVector;
-
     public float moveSpeed = 8f;
     public float rotationSpeed = 100f;
 
     private Vector3 viewPos;
 
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveVector = context.ReadValue<Vector2>();
+    }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        lookVector = context.ReadValue<Vector2>();
+    }
     private void Update()
     {
         if (GameManager.Instance != null && GameManager.Instance.mode == 1)
         {
-	    HandleInputSystemControls();
-            
+            HandleInputSystemControls();
+
         }
         else
         {
             HandleClassicControls();
-            
+
         }
+    }
+
+    void LateUpdate()
+    {
+        viewPos = transform.position;
+        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
+        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
+        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
+        transform.position = viewPos;
     }
 
     private void HandleClassicControls()
@@ -55,34 +72,31 @@ public class MoveRocket : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        moveVector = context.ReadValue<Vector2>();
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        lookVector = context.ReadValue<Vector2>();
-    }
-
     private void HandleInputSystemControls()
     {
-        Vector3 movement = new Vector3(moveVector.y, 0, -moveVector.x);
-        movement.Normalize();
-        transform.Translate(moveSpeed * movement * Time.deltaTime, Space.Self);
 
-        float horizontalRotation = lookVector.x * rotationSpeed * Time.deltaTime;
-        float verticalRotation = lookVector.y * rotationSpeed * Time.deltaTime;
+        transform.Translate(moveVector.y * 0.2f, 0, 0);
 
-        transform.Rotate(0, horizontalRotation, 0, Space.World);
-        transform.Rotate(0, 0, verticalRotation, Space.World);
+        if (lookVector.y > 0 && Mathf.Abs(lookVector.y) > Mathf.Abs(lookVector.x))
+        {
+            transform.Rotate(0.0f, 0.0f, 0.5f); //cima
+        }
+
+        if (lookVector.y < 0 && Mathf.Abs(lookVector.y) > Mathf.Abs(lookVector.x))
+        {
+            transform.Rotate(0.0f, 0.0f, -0.5f); //baixo
+        }
+
+        if ((lookVector.x < 0 && Mathf.Abs(lookVector.x) > Mathf.Abs(lookVector.y)) || moveVector.x < 0)
+        {
+            transform.Rotate(0.0f, -0.5f, 0.0f); //esquerda
+        }
+
+        if ((lookVector.x > 0 && Mathf.Abs(lookVector.x) > Mathf.Abs(lookVector.y)) || moveVector.x > 0)
+        {
+            transform.Rotate(0.0f, 0.5f, 0.0f); //direita
+        }
+
     }
 
-    void LateUpdate(){
-        viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, -200f, 200f);
-        viewPos.y = Mathf.Clamp(viewPos.y, -200f, 200f);
-        viewPos.z = Mathf.Clamp(viewPos.z, -200f, 200f);
-        transform.position = viewPos;
-    } 
 }

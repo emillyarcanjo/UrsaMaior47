@@ -16,10 +16,10 @@ public class MoveCamera : MonoBehaviour
     public float smoothTime = 0.2f;
     private Vector3 velocity = Vector3.zero;
 
-    void Start()  
-    {  
+    void Start()
+    {
         offset = transform.position - Rocket.transform.position;
-    }  
+    }
 
     public void InputPlayer(InputAction.CallbackContext _context)
     {
@@ -34,36 +34,68 @@ public class MoveCamera : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))  
-        {  
-            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, -0.5f);    
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))  
-        {  
-            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, 0.5f);   
-        }
-        if (Input.GetKey(KeyCode.UpArrow))  
-        {  
-            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, 0.5f);    
-        }
-        if (Input.GetKey(KeyCode.DownArrow))  
-        {  
-            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, -0.5f);    
-        }
-        Vector3 movement = new Vector3(moveVector.x, 0, moveVector.y);
-        movement.Normalize();
-        transform.Translate(moveSpeed * movement * Time.deltaTime, Space.Self);
+        if (GameManager.Instance != null && GameManager.Instance.mode == 1)
+        {
+            HandleInputSystemControls();
 
-        float horizontalRotation = rotateVector.x * rotationSpeed * Time.deltaTime;
-        float verticalRotation = rotateVector.y * rotationSpeed * Time.deltaTime;
+        }
+        else
+        {
+            HandleClassicControls();
 
-        transform.Rotate(0, horizontalRotation, 0, Space.World);
+        }
 
     }
 
-
-    void LateUpdate(){
-        Vector3 targetPosition = Rocket.transform.position + Rocket.transform.localRotation*offset;
+    void LateUpdate()
+    {
+        Vector3 targetPosition = Rocket.transform.position + Rocket.transform.localRotation * offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
+    private void HandleInputSystemControls()
+    {
+
+        if ((rotateVector.x < 0 && Mathf.Abs(rotateVector.x) > Mathf.Abs(rotateVector.y)) || moveVector.x < 0)
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, -0.5f); //esquerda
+        }
+
+        if ((rotateVector.x > 0 && Mathf.Abs(rotateVector.x) > Mathf.Abs(rotateVector.y)) || moveVector.x > 0)
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, 0.5f); //direita
+        }
+
+        if (rotateVector.y > 0 && Mathf.Abs(rotateVector.y) > Mathf.Abs(rotateVector.x))
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, 0.5f); //cima
+        }
+
+        if (rotateVector.y < 0 && Mathf.Abs(rotateVector.y) > Mathf.Abs(rotateVector.x))
+        {
+
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, -0.5f); //baixo
+        }
+
+
+    }
+    private void HandleClassicControls()
+    {
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, -0.5f); //esquerda
+        }
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.up, 0.5f); //direita
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, 0.5f); //cima
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.RotateAround(Rocket.transform.position, Rocket.transform.forward, -0.5f); //baixo
+        }
+    }
+
 }
