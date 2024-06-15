@@ -2280,12 +2280,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5608799410331176448, guid: 4be7a99d429a19840a38df28f88a8680, type: 3}
+      propertyPath: field of view
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608799410331176448, guid: 4be7a99d429a19840a38df28f88a8680, type: 3}
       propertyPath: far clip plane
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 5608799410331176448, guid: 4be7a99d429a19840a38df28f88a8680, type: 3}
       propertyPath: near clip plane
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
