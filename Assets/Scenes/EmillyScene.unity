@@ -1003,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 1046777691}
     - target: {fileID: 2975817870103273233, guid: 13a81c5984e05e1418e77ba2697ec8e6, type: 3}
       propertyPath: distanceThreshold
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5840669913835516186, guid: 13a81c5984e05e1418e77ba2697ec8e6, type: 3}
       propertyPath: m_Constraints
